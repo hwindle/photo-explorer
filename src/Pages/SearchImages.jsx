@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import ImageContainer from '../components/ImageContainer/ImageContainer';
 import TextInput from '../components/TextInput/TextInput';
 
 const SearchImages = () => {
@@ -22,7 +23,7 @@ const SearchImages = () => {
       <h2>Search Images</h2>
       <TextInput onChangeHandler={onQueryChange}
         onSubmitHandler={handleSubmit} />
-      <p>{queryValue}</p>
+      <ImageContainer searchWord={queryValue} gallery={true} />
     </section>
     
   );
