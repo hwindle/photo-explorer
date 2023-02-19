@@ -1,21 +1,22 @@
 import React from 'react';
 import ImageListItem from '@mui/material/ImageListItem';
 
-const SmallPhotoCard = (props) => {
-  function srcset(image, size, rows = 1, cols = 1) {
+const SmallPhotoCard = ({photo, id}) => {
+  function srcset(photo, size, rows = 1, cols = 1) {
     return {
-      src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-      srcSet: `${image}?w=${size * cols}&h=${
+      src: `${photo}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+      srcSet: `${photo}?w=${size * cols}&h=${
         size * rows
       }&fit=crop&auto=format&dpr=2 2x`,
     };
   }
 
   return (
-    <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+    <ImageListItem key={id} cols={photo?.cols || 4} rows={photo?.rows || 1}>
       <img
-        {...srcset(item.img, 121, item.rows, item.cols)}
-        alt={item.title}
+        {...srcset(photo?.imageUrl, 121, photo?.rows, photo?.cols)}
+        alt={photo?.description}
+        title={photo?.name}
         loading="lazy"
       />
     </ImageListItem>
