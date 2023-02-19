@@ -13,9 +13,8 @@ const SearchImages = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (queryValue) {
-      setSubmitFlag(true);
-    } 
+    console.log('hi');
+    setSubmitFlag(true);
   }
 
   return (
@@ -23,7 +22,9 @@ const SearchImages = () => {
       <h2>Search Images</h2>
       <TextInput onChangeHandler={onQueryChange}
         onSubmitHandler={handleSubmit} />
-      <ImageContainer searchWord={queryValue} gallery={true} />
+      {submitFlag ? 
+        <ImageContainer searchWord={queryValue} gallery={true} />
+      : null }
     </section>
     
   );

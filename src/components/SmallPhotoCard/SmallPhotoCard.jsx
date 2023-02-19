@@ -1,24 +1,20 @@
 import React from 'react';
 import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
 
 const SmallPhotoCard = ({photo, id}) => {
-  function srcset(photo, size, rows = 1, cols = 1) {
-    return {
-      src: `${photo}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-      srcSet: `${photo}?w=${size * cols}&h=${
-        size * rows
-      }&fit=crop&auto=format&dpr=2 2x`,
-    };
-  }
-
+  
   return (
-    <ImageListItem key={id} cols={photo?.cols || 4} rows={photo?.rows || 1}>
+    <ImageListItem className='SmallPhotoCard' key={id}>
       <img
-        {...srcset(photo?.imageUrl, 121, photo?.rows, photo?.cols)}
+        src={photo?.imageUrl}
         alt={photo?.description}
-        title={photo?.name}
-        loading="lazy"
       />
+      <ImageListItemBar
+            title={photo?.description}
+            subtitle={<span>by: {photo?.name}</span>}
+            position="below"
+          />
     </ImageListItem>
   );
 };

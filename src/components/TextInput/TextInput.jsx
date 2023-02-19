@@ -9,13 +9,14 @@ const TextInput = (props) => {
     <form className='text-input' onSubmit={props.onSubmitHandler}>
       <TextField
         required
+        pattern=''
         id='filled-required'
         label='Required'
         placeholder='Search'
         variant='filled'
         onChange={props.onChangeHandler}
       />
-      <Button variant='contained' startIcon={<SearchIcon />}>
+      <Button type='submit' variant='contained' startIcon={<SearchIcon />}>
         Search
       </Button>
     </form>

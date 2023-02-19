@@ -43,11 +43,8 @@ const ImageContainer = ({searchWord, gallery}) => {
     <Container maxWidth="md">
       {gallery ? <ImageList
         sx={{ width: '100%', height: 'auto' }}
-        variant="quilted"
-        cols={4}
-        rowHeight={121}
         >
-          {imageData.map((image) => (<SmallPhotoCard photo={image} id={shortID.generate()} />))}
+          {imageData?.map((image) => (<SmallPhotoCard photo={image} id={shortID.generate()} />))}
         </ImageList>
       : <BigImage photo={imageData} />}
     </Container>

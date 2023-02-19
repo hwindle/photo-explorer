@@ -1,0 +1,10 @@
+.SmallPhotoCard > img {
+  width: 50%;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.SmallPhotoCard {
+  overflow-y: hidden;
+}
+
