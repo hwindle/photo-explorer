@@ -1,8 +1,12 @@
 import React from 'react';
+import ImageContainer from '../components/ImageContainer/ImageContainer';
 
 const RandomImage = () => {
   return (
-    <h2>Random Image</h2>
+    <section>
+      <h2>Random Image</h2>
+      <ImageContainer searchWord={'none'} gallery={false} />
+    </section>
   );
 };
 

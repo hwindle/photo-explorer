@@ -2,7 +2,10 @@ import React from 'react';
 
 const ErrorPage = () => {
   return (
-    <h2>Error</h2>
+    <section>
+      <h2>Error</h2>
+      <p className='error-info'>404 Not found, please check spelling.</p>
+    </section>
   );
 };
 

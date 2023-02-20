@@ -2,7 +2,10 @@ import React from 'react';
 
 const HomePage = () => {
   return (
-    <h2>Home</h2>
+    <section>
+      <h2>Home</h2>
+      <p className="site-desc">Images from the Unsplash stock images website.</p>
+    </section>
   );
 };
 

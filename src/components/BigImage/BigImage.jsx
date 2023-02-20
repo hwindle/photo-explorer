@@ -1,8 +1,12 @@
 import React from 'react';
+import './BigImage.css';
 
 const BigImage = ({photo}) => {
   return (
-    <figure></figure>
+    <figure className="big-image">
+      <img src={photo?.imageUrl} alt={photo?.description} />
+      <figcaption>{photo?.description} - {photo?.name}</figcaption>
+    </figure>
   );
 };
 

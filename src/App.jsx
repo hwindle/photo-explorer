@@ -1,7 +1,7 @@
-import './App.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import PhotosRouter from './PhotosRouter/PhotosRouter';
+import './App.css';
 
 const darkTheme = createTheme({
   palette: {
