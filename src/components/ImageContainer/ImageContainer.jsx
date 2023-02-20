@@ -27,7 +27,7 @@ const ImageContainer = ({searchWord, gallery}) => {
       try {
         setLoading(true);
         const res = await axios.get(url);
-        console.log(res.data);
+        // console.log(res.data);
         setImageData(res.data);
       } catch (error) {
         console.log("Error from search Images fetch", error);
@@ -42,7 +42,8 @@ const ImageContainer = ({searchWord, gallery}) => {
   return (
     <Container maxWidth="md">
       {gallery ? <ImageList
-        sx={{ width: '100%', height: 'auto' }}
+        sx={{ width: 1000, height: 1000 }}
+        variant="woven" cols={1} gap={5}
         >
           {imageData?.map((image) => (<SmallPhotoCard photo={image} id={shortID.generate()} />))}
         </ImageList>
